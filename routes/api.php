@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,11 @@ Route::middleware('auth:api')->prefix('v1')->group(function(){
         return $request->user();
     });
 
+    Route::post('edit/profile', [RegisteredUserController::class, 'editProfile']);
+
 });
+
+Route::post('register', [RegisteredUserController::class, 'storeAPI']);
 
 Route::get('test', function (Request $request) {
     return 'Authenticated from fast travel v2';
