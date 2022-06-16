@@ -26,3 +26,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+Route::get('protege', function () {
+    return 'affichage de la route protégé';
+})->middleware('verified');

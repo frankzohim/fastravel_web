@@ -142,12 +142,12 @@
                                 <div>
                                     <h3>Back Office Administration</h3>
                                     <p>
-                                        Utilisateurs, Trajets, Validation, Paiement, 
+                                        Utilisateurs, Trajets, Validation, Paiement,
                                         Réservation, , Administration, Commentaires,
                                     </p>
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,9 @@
                                             <div class="form-check mesm-2">
                                                 <input id="remember_me" name="remember" type="checkbox" class="form-check-input" >
                                                 <label class="form-check-label ps-2" for="customControlAutosizing">Se Souvenir </label>
-                                                <a href="#" class="btn btn-default forgot-pass">Mot de passe oublié?</a>
+                                                @if (Route::has('password.request'))
+                                                <a href="{{ route('password.request') }}" class="btn btn-default forgot-pass">Mot de passe oublié?</a>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-button">
