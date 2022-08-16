@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TravelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ require __DIR__.'/auth.php';
 Route::get('protege', function () {
     return 'affichage de la route protégé';
 })->middleware('verified');
+
+
+Route::resource('travel', TravelController::class);
